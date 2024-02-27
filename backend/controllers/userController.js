@@ -43,7 +43,7 @@ const signupUser = async (req, res) => {
         console.log("Error in signupUser: ", err.message)
 }
 };
-const loginUser = asynnc (req, res) => {
+const loginUser = async (req, res) => {
     try {
 
     }catch (error) {
