@@ -48,7 +48,17 @@ const loginUser = async (req, res) => {
 
         const {username, password} = req.body;
         const user = await User.findOne({username});
-        const isPasswordCorrect = await bcrypt.compare(password, user.password);
+        const isPasswordCorrect = await bcrypt.compare(password, user?.password || "");
+
+        if(!user || !isPasswordCorrect) return res.status(400).jsobn({ message: "Invalid username or password"});
+        generateTokenAndSetCookies(user._id, res);
+        res.status(200).json({
+            _id: user._id,
+            name: user.name,
+            email: user.email,
+            username: user.username
+
+        })
 
     }catch (error) {
         res.status(500).json({message: error.message});
