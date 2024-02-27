@@ -11,6 +11,8 @@ const generateTokenAndSetCookies = (userId,res) => {
         sameSite:"strict"
     })
 
+    return cookies
+
 }
 
 export default getTokenAndSetCookies;
