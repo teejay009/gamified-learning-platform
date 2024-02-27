@@ -48,7 +48,7 @@ const loginUser = async (req, res) => {
 
         const {username, password} = req.body;
         const user = await User.findOne({username});
-        const isPasswordCorrect = await bcrypt.compare(password, user.password)
+        const isPasswordCorrect = await bcrypt.compare(password, user.password);
 
     }catch (error) {
         res.status(500).json({message: error.message});
