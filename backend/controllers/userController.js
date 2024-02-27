@@ -1,7 +1,8 @@
 import User from "../models/userModel.js";
 import bcrypt from "bcryptjs";
-import getTokenAndSetCookies from "../routes/utils/helpers/generateTokenAndSetCookie.js";
+import generateTokenAndSetCookies from "../utils/helpers/generateTokenAndSetCookie.js";
 
+// sign
 const signupUser = async (req, res) => {
     try {
         const {name,email,username,password} = req.body;
