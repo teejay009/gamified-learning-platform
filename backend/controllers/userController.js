@@ -41,18 +41,19 @@ const signupUser = async (req, res) => {
 } catch (err) {
         res.status(500).json({ message: err.message})
         console.log("Error in signupUser: ", err.message)
-}
+    }
 };
 const loginUser = async (req, res) => {
     try {
 
-        const {name,email,username,password} = req.body;
+        const {username, password} = req.body;
+        const user = await User.findOne({username});
+        const isPasswordCorrect = await bcrypt.compare(password, user.password)
 
     }catch (error) {
         res.status(500).json({message: error.message});
         console.log("Error inloginUser:", error.message);
     }
-
 };
 
 export { signupUser, loginUser };
