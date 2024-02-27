@@ -26,7 +26,7 @@ const signupUser = async (req, res) => {
     if(newUser){
 
 
-        getTokenAndSetCookies(newUser._id, res);
+        generateTokenAndSetCookies(newUser._id, res);
         res.status(201).json({
             _id: newUser._id,
             name: newUser.name,
@@ -43,5 +43,6 @@ const signupUser = async (req, res) => {
         console.log("Error in signupUser: ", err.message)
 }
 };
+const login
 
 export { signupUser };
