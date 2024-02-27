@@ -2,7 +2,7 @@ import User from "../models/userModel.js";
 import bcrypt from "bcryptjs";
 import generateTokenAndSetCookies from "../utils/helpers/generateTokenAndSetCookie.js";
 
-// sign
+// signUP user
 const signupUser = async (req, res) => {
     try {
         const {name,email,username,password} = req.body;
