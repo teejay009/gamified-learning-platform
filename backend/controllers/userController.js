@@ -44,7 +44,7 @@ const signupUser = async (req, res) => {
 }
 };
 const loginUser = async (req, res) => {
-    trycatch {
+    try {
 
     }catch (error) {
         res.status(500).json({message: error.message});
