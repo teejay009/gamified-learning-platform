@@ -43,6 +43,8 @@ const signupUser = async (req, res) => {
         console.log("Error in signupUser: ", err.message)
 }
 };
-const login
+const loginUser = asynnc (req, res) => {
+
+};
 
 export { signupUser };
