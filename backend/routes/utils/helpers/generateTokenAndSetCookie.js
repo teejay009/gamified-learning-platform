@@ -7,7 +7,7 @@ const generateTokenAndSetCookies = (userId,res) => {
 
     res.cookies("jwt", token, {
         httpOnly: true, // This cookies can not be accessed by the browser. more secure
-        maxAge: 15 * 60 * 1000, // 15 days
+        maxAge: 15 * 24 * 60 * 60 * 1000, // 15 days
         sameSite:"strict"
     })
 
