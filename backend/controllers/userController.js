@@ -45,7 +45,8 @@ const signupUser = async (req, res) => {
 };
 const loginUser = async (req, res) => {
     try {
-        
+
+        const {name,email,username,password} = req.body;
 
     }catch (error) {
         res.status(500).json({message: error.message});
