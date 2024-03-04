@@ -67,4 +67,14 @@ const loginUser = async (req, res) => {
     }
 };
 
+const logoutUser = (req, res) => {
+    try {
+
+    } catch (error) {
+        res.status(500).json({message: error.message});
+        console.log("Error inloginUser:", error.message);
+
+    }
+};
+
 export { signupUser, loginUser };
