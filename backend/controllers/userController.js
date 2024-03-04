@@ -47,7 +47,7 @@ const loginUser = async (req, res) => {
     try {
 
         const {username, password} = req.body;
-        const user = await User.findOne({ username });
+        const user = await User.findOne({ username }); // jaamesallan
         const isPasswordCorrect = await bcrypt.compare(password, user?.password || "");
 
         if(!user || !isPasswordCorrect) return res.status(400).jsobn({ message: "Invalid username or password"});
