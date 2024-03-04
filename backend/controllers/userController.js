@@ -62,7 +62,7 @@ const loginUser = async (req, res) => {
         })
 
     }catch (error) {
-        res.status(200).json({message: error.message});
+        res.status(500).json({message: error.message});
         console.log("Error inloginUser:", error.message);
     }
 };
@@ -71,6 +71,8 @@ const logoutUser = (req, res) => {
     try {
 
     } catch (error) {
+        res.cookie("jwt", "", { maxAge: 1});
+        res.status(200)
         res.status(500).json({message: error.message});
         console.log("Error inloginUser:", error.message);
 
