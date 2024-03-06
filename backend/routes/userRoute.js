@@ -9,6 +9,4 @@ router.post('/logout', logoutUser);
 router.post("/follow/:id", followUnfollowUser);
 
 
-
-
 export default router;
