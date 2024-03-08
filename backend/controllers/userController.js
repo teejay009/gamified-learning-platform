@@ -99,7 +99,7 @@ const followUnfollowUser = async (req, res) => {
         } else {
             // folloe user
             await User.findByIdAndUpdate(id, { $push: { followers: req.user._id} });
-            await User.findByIdAndUpdate(req.user._id, { $push: { following: id}})
+            await User.findByIdAndUpdate(req.user._id, { $push: { following: id} });
         }
 
 
