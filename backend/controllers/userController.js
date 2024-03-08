@@ -83,6 +83,7 @@ const logoutUser = (req, res) => {
 
 const followUnfollowUser = async (req, res) => {
     try {
+        const { id } = req.params;
 
     } catch (err) {
         res.status(500).json({ message: err.message });
