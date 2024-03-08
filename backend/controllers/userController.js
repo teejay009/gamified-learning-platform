@@ -84,6 +84,8 @@ const logoutUser = (req, res) => {
 const followUnfollowUser = async (req, res) => {
     try {
         const { id } = req.params;
+        const userTomodify = await User.findById(id);
+        const currentUser = await User.findById(req.user._id);
 
     } catch (err) {
         res.status(500).json({ message: err.message });
