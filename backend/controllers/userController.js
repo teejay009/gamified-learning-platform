@@ -86,6 +86,7 @@ const followUnfollowUser = async (req, res) => {
         const { id } = req.params;
         const userTomodify = await User.findById(id);
         const currentUser = await User.findById(req.user._id);
+        if(id === req.user._id) return res.status(400).json({ message: "You cannot follow/unfollow your self" });
 
     } catch (err) {
         res.status(500).json({ message: err.message });
