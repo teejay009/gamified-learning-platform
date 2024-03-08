@@ -97,7 +97,8 @@ const followUnfollowUser = async (req, res) => {
             await User.findByIdAndUpdate(req.user._id, { $pull: { following: id} });
             await User.findByIdAndUpdate(id, { $pull: { followers: req.user._id } });
         } else {
-            
+            // folloe user
+            await
         }
 
 
