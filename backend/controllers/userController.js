@@ -91,7 +91,9 @@ const followUnfollowUser = async (req, res) => {
 
         const isFollowing = currentUser.following.includes(id);
 
-        if (isFollowing)
+        if (isFollowing) {
+            //
+        }
 
 
     } catch (err) {
