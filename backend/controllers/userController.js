@@ -113,4 +113,6 @@ const followUnfollowUser = async (req, res) => {
     }
 };
 
+const updateUser = (req, res) => {}
+
 export { signupUser, loginUser, logoutUser, followUnfollowUser };
