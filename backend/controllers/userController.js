@@ -113,7 +113,7 @@ const followUnfollowUser = async (req, res) => {
     }
 };
 
-const updateUser = (req, res) => {
+const updateUser = async (req, res) => {
     try {
 
     } catch (err) {
