@@ -9,7 +9,7 @@ dotenv.config();
 connectDB();
 const app = express ();
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 4000
 
 app.use(express.json()); // To parse JSON data in the req.body
 app.use(express.urlencoded({ extended: true})); //To parse form data in the req.body

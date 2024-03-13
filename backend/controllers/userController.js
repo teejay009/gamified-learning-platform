@@ -2,7 +2,9 @@ import User from "../models/userModel.js";
 import bcrypt from "bcryptjs";
 import generateTokenAndSetCookies from "../utils/helpers/generateTokenAndSetCookie.js";
 
-const getUserProfile  = async (req, res) => {
+
+const getUserProfile = async (req, res) => {
+
     const {username} = req.params;
     try {
         const user = await User.findOne({ username }).select("-password").select("-updatedAt");
@@ -160,6 +162,8 @@ const followUnFollowUser  = async (req, res) => {
 
 };
 
-const getUserProfile = async (req, res) => {}
+//const getUserProfile = async (req, res) => {};
 
-export { signupUser, loginUser, logoutUser, followUnFollowUser, updateUser, getUserProfile };
+
+
+export { signupUser, loginUser, logoutUser, followUnfollowUser, updateUser, getUserProfile };
