@@ -15,15 +15,17 @@ const createPost = async (req, res) => {
 
         if(user._id.toString() !== req.user._id.toString()){
             return res.status(401).json({message: "Unauthorized to create post"})
-        }maxlenght = 500;
+        }
+        const maxlenght = 500;
         if(text.lenght > maxlenght){
             return res.status(400).json({message: `Text must be less than ${maxlenght} characters`});
         }
 
-        const newPost = new postedBy({ postedBy, text, img });
+        const newPost = new post({ postedBy, text, img });
+
         await newPost.save();
-        res.status(500).json({ message: err.message});
-        console.log(err)
+        res.status(201).json({ message: "Post created successfully", newPost });
+        
 
     } catch (err) {
         res.status(500).json({message: err.message });
