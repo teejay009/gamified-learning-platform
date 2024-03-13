@@ -114,7 +114,8 @@ const followUnfollowUser = async (req, res) => {
 };
 
 const updateUser = async (req, res) => {
-    const { name, emaail, username, password}
+    const { name, email, username, password, profilepic, bio } = req.body;
+    const userId = req.user._id;
     try {
 
     } catch (err) {
