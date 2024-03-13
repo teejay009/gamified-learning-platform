@@ -1,4 +1,4 @@
-import User from "../models/userModel";
+import User from "../models/userModel.js";
 
 const createPost = async (req, res) => {
     try {
@@ -9,7 +9,7 @@ const createPost = async (req, res) => {
         }
 
         const user = await User.findById(postedBy);
-        
+
     } catch (err) {
         res.status(500).json({message: err.message });
         console.log(err)
