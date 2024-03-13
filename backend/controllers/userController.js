@@ -126,6 +126,7 @@ const updateUser = async (req, res) => {
             User.password = hashedPassword;
         }
         user.name = name || user.name
+        user.email = email || user.email
 
     } catch (err) {
         res.status(500).json({ message: err.message });
