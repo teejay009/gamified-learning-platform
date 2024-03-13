@@ -125,7 +125,7 @@ const updateUser = async (req, res) => {
             const hashedPassword = await bcrypt.hash(password, salt);
             User.password = hashedPassword;
         }
-        user.name = name || username.name
+        user.name = name || user.name
 
     } catch (err) {
         res.status(500).json({ message: err.message });
