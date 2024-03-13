@@ -6,9 +6,9 @@ const app = express();
 import { createPost } from "../controllers/postController.js";
 
 
-const router = Express.Router();
+const router = express.Router();
 
-router.POST("/create", createPost)
+router.post("/create", createPost)
 
 export default router;
 
