@@ -2,7 +2,7 @@ import User from "../models/userModel.js";
 import bcrypt from "bcryptjs";
 import generateTokenAndSetCookies from "../utils/helpers/generateTokenAndSetCookie.js";
 
-const  = async (req, res) => {
+const getUserProfile  = async (req, res) => {
     const {username} = req.params;
     try {
         const user = await User.findOne({ username }).select("-password").select("-updatedAt");
