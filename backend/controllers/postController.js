@@ -5,7 +5,7 @@ const createPost = async (req, res) => {
         const {postedBy,text,img} = req.body;
 
         if(!postedBy || !text) {
-            return res.status(400).json({message: "please fill all the fields"})
+            return res.status(400).json({message: "postedby and text fields are required"})
         }
     } catch (err) {
         res.status(500).json({message: err.message });
