@@ -20,7 +20,8 @@ const createPost = async (req, res) => {
             return res.status(400).json({message: `Text must be less than ${maxlenght} characters`});
         }
 
-        const 
+        const newPost = new postedBy({ postedBy, text, img });
+        await newPost
 
     } catch (err) {
         res.status(500).json({message: err.message });
