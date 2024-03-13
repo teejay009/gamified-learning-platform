@@ -16,7 +16,9 @@ const createPost = async (req, res) => {
         if(user._id.toString() !== req.user._id.toString()){
             return res.status(401).json({message: "Unauthorized to create post"})
         }maxlenght = 500;
-        if(text)
+        if(text.lenght > maxlenght){
+            return res.status(400).json({message: `Text must be less than ${maxlenght} characters`});
+        }
 
         const 
 
