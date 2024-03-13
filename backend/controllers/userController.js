@@ -86,7 +86,8 @@ const followUnfollowUser = async (req, res) => {
         const { id } = req.params;
         const userTomodify = await User.findById(id);
         const currentUser = await User.findById(req.user._id);
-        if(id === req.user._id) return res.status(400).json({ message: "You cannot follow/unfollow your self" });
+        if(id === req.user._id.toString())
+         return res.status(400).json({ message: "You cannot follow/unfollow your self" });
         if(!userTomodify || !currentUser) return res.status(400).json({ message: "User not found" });
 
         const isFollowing = currentUser.following.includes(id);
@@ -131,6 +132,9 @@ const updateUser = async (req, res) => {
         user.profilePic = profilepic || user.profilePic;
         user.bio = bio || user.bio;
 
+        await user.save();
+
+        res.status(200).json({ message: "profile update successfully", user });
     } catch (err) {
         res.status(500).json({ message: err.message });
         console.log("Error in updateUser: ", err.message);
