@@ -156,6 +156,10 @@ const updateUser = async (req, res) => {
         console.log("Error in updateUser: ", err.message);
 }
 };
-const  = async (req, res) => {}
+const followUnFollowUser  = async (req, res) => {
 
-export { signupUser, loginUser, logoutUser, followUnfollowUser };
+};
+
+const getUserProfile = async (req, res) => {}
+
+export { signupUser, loginUser, logoutUser, followUnFollowUser, updateUser, getUserProfile };
