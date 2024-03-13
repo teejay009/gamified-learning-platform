@@ -2,6 +2,21 @@ import User from "../models/userModel.js";
 import bcrypt from "bcryptjs";
 import generateTokenAndSetCookies from "../utils/helpers/generateTokenAndSetCookie.js";
 
+const getUserProfile = async (req, res) => {
+    const {username} = req.params;
+    try {
+        const user = await User.findOne({ username }).select("-password").select("-updatedAt");
+        if (!user) return res.status(400).json({message: "User not found"});
+
+        res.status(200).json(user);
+    }catch (err) {
+        res.status(500).json({ message; err.message});
+        console.log("Error in getUserProfile: ", err.message);
+    }
+
+
+    }
+
 // signUP user
 const signupUser = async (req, res) => {
     try {
@@ -119,7 +134,8 @@ const updateUser = async (req, res) => {
     const userId = req.user._id;
     try {
         let user = await User.findById(userId);
-        if (!user) return res.status(400).json({ message; "User not found" });
+        if (!user) return res.status(400).json({ message: "User not found" });
+        if (req.params.id !==)
 
         if (password){
             const salt = await bcrypt.genSalt(10);
@@ -132,7 +148,7 @@ const updateUser = async (req, res) => {
         user.profilePic = profilepic || user.profilePic;
         user.bio = bio || user.bio;
 
-        await user.save();
+        user = await user.save();
 
         res.status(200).json({ message: "profile update successfully", user });
     } catch (err) {
