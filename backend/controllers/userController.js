@@ -117,7 +117,8 @@ const updateUser = async (req, res) => {
     const { name, email, username, password, profilepic, bio } = req.body;
     const userId = req.user._id;
     try {
-        let user = await User.findId
+        let user = await User.findById(userId);
+        if (!user) {
 
     } catch (err) {
         res.status(500).json({ message: err.message });
