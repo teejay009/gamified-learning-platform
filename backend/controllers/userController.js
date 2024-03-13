@@ -129,7 +129,7 @@ const updateUser = async (req, res) => {
         user.email = email || user.email;
         user.username = username || user.username;
         user.profilePic = profilepic || user.profilePic;
-        user.bio = bio || user.profilePic;
+        user.bio = bio || user.bio;
 
     } catch (err) {
         res.status(500).json({ message: err.message });
