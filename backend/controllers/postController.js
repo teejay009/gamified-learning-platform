@@ -95,4 +95,5 @@ res.status(200).json({message: "Post unliked successfully"});
     }
 };
 
+const reply
 export { createPost, getPost, deletePost, likeUnlikePost, replyToPost };
