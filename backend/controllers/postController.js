@@ -31,6 +31,6 @@ const createPost = async (req, res) => {
         res.status(500).json({message: err.message });
         console.log(err)
     }
-}
+};
 
 export { createPost };
