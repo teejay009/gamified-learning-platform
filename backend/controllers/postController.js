@@ -94,4 +94,4 @@ res.status(200).json({message: "Post unliked successfully"});
         res.status(500).json({message: err.message});
     }
 }
-export { createPost, getPost, deletePost, likeUnlikePost };
+export { createPost, getPost, deletePost, likeUnlikePost, replyToPost };
