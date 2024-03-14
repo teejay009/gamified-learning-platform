@@ -98,7 +98,11 @@ res.status(200).json({message: "Post unliked successfully"});
 const replyToPost = async (req, res) => {
     try {
         const {text} = req.body;
-        const {id} = req.params;
+        const postId = req.params.id;
+        const userId = req.user._id;
+        const UserProfilePic = req.user.profilePic;
+        const username = req.user.username;
+        
     } catch (err) {
         res.status(500).json({message: err.message});
     }
