@@ -9,7 +9,7 @@ const router = express.Router();
 
 router.get("/id",getPost);
 router.post("/create", protectRoute, createPost);
-router.delete("/:id", deletePost);
+router.delete("/:id",protectRoute, deletePost);
 
 export default router;
 
