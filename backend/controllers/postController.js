@@ -51,5 +51,12 @@ const getPost = async (req, res) => {
     }
 };
 
-const deletePost = async (req, res) => {}
+const deletePost = async (req, res) => {
+    try {
+        const post = await Post.findById(req.params.id);
+
+    }catch (err) {
+        res.status(500).json({message: err.message});
+    }
+}
 export { createPost, getPost, deletePost };
