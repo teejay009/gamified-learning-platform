@@ -1,4 +1,6 @@
+import Post from "../models/postModel.js";
 import User from "../models/userModel.js";
+
 
 const createPost = async (req, res) => {
     try {
@@ -13,6 +15,7 @@ const createPost = async (req, res) => {
             return res.status(404).json({message: "User not found"})
         }
 
+
         if(user._id.toString() !== req.user._id.toString()){
             return res.status(401).json({message: "Unauthorized to create post"})
         }
@@ -21,7 +24,7 @@ const createPost = async (req, res) => {
             return res.status(400).json({message: `Text must be less than ${maxlenght} characters`});
         }
 
-        const newPost = new post({ postedBy, text, img });
+        const newPost = new Post({ postedBy, text, img });
 
         await newPost.save();
         res.status(201).json({ message: "Post created successfully", newPost });
@@ -33,4 +36,18 @@ const createPost = async (req, res) => {
     }
 };
 
-export { createPost };
+const getPost = async (req, res) => {
+    try {
+        const post = await Post.findById(req.params.id)
+
+        if (!post) {
+            return res.status(404).json({message: "No post found"});
+        }
+
+        res.status(200).json({ post });
+    } catch (err) {
+        res.status(500).json({message: err.message});
+
+    }
+};
+export { createPost, getPost };
