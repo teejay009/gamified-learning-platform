@@ -51,5 +51,5 @@ const getPost = async (req, res) => {
     }
 };
 
-const deletePost = async (req, res) => {
+const deletePost = async (req, res) => {}
 export { createPost, getPost };
