@@ -102,7 +102,16 @@ const replyToPost = async (req, res) => {
         const userId = req.user._id;
         const UserProfilePic = req.user.profilePic;
         const username = req.user.username;
-        
+
+        if(!text) {
+            return res.status(400).json({message: "Text field is required"})
+        }
+
+        const post = await Post.findById(postId);
+        if(!Post){
+            return res.status(404).json({message: "Post not found"});
+        }
+
     } catch (err) {
         res.status(500).json({message: err.message});
     }
