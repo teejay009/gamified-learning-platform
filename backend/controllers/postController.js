@@ -120,7 +120,10 @@ const replyToPost = async (req, res) => {
 const getFeedPosts = async (req, res) => {
     try {
 
-    } catch (err) {}
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+        
+    }
 }
 
-export { createPost, getPost, deletePost, likeUnlikePost, replyToPost };
+export { createPost, getPost, deletePost, likeUnlikePost, replyToPost, getFeedPosts };
