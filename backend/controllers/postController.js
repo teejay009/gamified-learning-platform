@@ -111,10 +111,12 @@ const replyToPost = async (req, res) => {
     }
     const reply = { userId, text, UserProfilePic, username };
     post.replies.push(reply);
-    
+
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 };
+
+const getFeedPosts = async (req, res) => {}
 
 export { createPost, getPost, deletePost, likeUnlikePost, replyToPost };
