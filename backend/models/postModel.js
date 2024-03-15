@@ -37,6 +37,8 @@ const postSchema = mongoose.Schema({
             },
             username:{
                 type:true,
+                required: true
+
             }
         }
     ]
