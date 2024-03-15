@@ -120,7 +120,7 @@ const replyToPost = async (req, res) => {
 const getFeedPosts = async (req, res) => {
     try {
 
-    } catch (err)
+    } catch (err) {}
 }
 
 export { createPost, getPost, deletePost, likeUnlikePost, replyToPost };
