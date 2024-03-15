@@ -108,6 +108,7 @@ const replyToPost = async (req, res) => {
         }
 
         const post = await Post.findById(postId);
+        
         if(!Post){
             return res.status(404).json({message: "Post not found"});
         }
