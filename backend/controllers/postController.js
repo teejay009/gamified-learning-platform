@@ -119,10 +119,11 @@ const replyToPost = async (req, res) => {
 
 const getFeedPosts = async (req, res) => {
     try {
+        const userId = req.user._id;
 
     } catch (err) {
         res.status(500).json({ message: err.message });
-        
+
     }
 }
 
