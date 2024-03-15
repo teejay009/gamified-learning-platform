@@ -117,6 +117,10 @@ const replyToPost = async (req, res) => {
   }
 };
 
-const getFeedPosts = async (req, res) => {}
+const getFeedPosts = async (req, res) => {
+    try {
+
+    } catch (err)
+}
 
 export { createPost, getPost, deletePost, likeUnlikePost, replyToPost };
