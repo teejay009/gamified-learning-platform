@@ -11,7 +11,7 @@ const protectRoute = async (req, res, next) => {
 
     } catch (error) {
         res.status(500).json({ message: err.message});
-        console.log("Error in signupUser: ", err.message);
+        console.log("Error  signupUser: ", err.message);
     }
 
 }
