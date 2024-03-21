@@ -32,12 +32,12 @@ const HeroSection = () => {
           <Box className="heroSection" flex="1">
             <Heading className="hero" fontSize="3.5rem" marginBottom="10px">
               Unlock, <span style={{ color: "#0575e6" }}>Learning</span>, <br />{" "}
-              Unleash <span style={{ color: "#0575e6" }}>Discovery</span>!!
+              Unleash <span style={{ color: "#0575e6" }}>Discovery</span>!
             </Heading>
             <Text className="para" fontSize="1.3rem" marginBottom="">
               Are you ready to revolutionize your learning experience and
               discover amazing products along the way?  Look no further!
-              [Platform name] is your ultimate destination for gamified
+              [T&J CONCEPT] is your ultimate destination for gamified
               learning and products exploration
             </Text>
           </Box>
