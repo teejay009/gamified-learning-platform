@@ -29,7 +29,7 @@ const Navbar = () => {
                   <Button variant="link" onClick={onToggle} fontWeight="bold">{tag}</Button>
                   <Box display={isOpen ? "block" : "none"} position="absolute" bgColor="white" boxShadow="md" p="2" top="100%" left="0" zIndex="1">
                     {dropdown.map((item, index) => (
-                        <Link k={index} as={RouterLink} to={`${path}/${item.toLowerCase()}`} display="block" py="2" px="3" color="black" _hover={{ bgColor: "gray.100" }}>{item}</Link>
+                        <Link ke={index} as={RouterLink} to={`${path}/${item.toLowerCase()}`} display="block" py="2" px="3" color="black" _hover={{ bgColor: "gray.100" }}>{item}</Link>
 
                     ))}
                   </Box>
